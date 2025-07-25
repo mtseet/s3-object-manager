@@ -41,13 +41,7 @@ Then host the generated contents of dist file with nginx.
 Add your S3 endpoint to .env.production file
 
 ```
-rm -rf dist
-npm install
-npm run build
-cd docker
-./build-image.sh
-
-docker run -p 5000:80 -d --name s3-object-manager s3-manager:latest
+docker run -p 5000:80 -d --name ghcr.io/mtseet/s3-object-manager:latest
 ```
 
 ## Development
