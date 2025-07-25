@@ -17,25 +17,29 @@ A web ui for accessing AWS S3 service and managing objects
 - Generate presigned urls for file/object sharing
 - Authentication flow/ui allowing auth with custom auth_key and auth_secret.
 
-# Screenshot
+## Screenshot
 ![Here is a screenshoot](screenshot.png)
 
 ## Dependencies
-nodejs and vuejs 3 for development only
+nodejs v22.17 or later
 
 ## Installation 
 install nodejs LTS and do
 `export PATH=/opt/node-v22.17.1-linux-x64/bin:$PATH`
 That is the version I developed on.
 
-## Development install and run
-```
-npm install
+## Run with nginx
+Add your S3 endpoint to .env.production file
 
-npm run dev
 ```
+npm install 
+npm run build
+```
+Then host the generated contents of dist file with nginx.
 
-# Run with docker
+## Run with docker
+Add your S3 endpoint to .env.production file
+
 ```
 rm -rf dist
 npm install
@@ -46,7 +50,21 @@ cd docker
 docker run -p 5000:80 -d --name s3-manager s3-manager:latest
 ```
 
-# Special notes
+## Development
+Add your S3 endpoint to .env.development file
+
+```
+npm install
+npm run dev
+```
+Then access from your local browser
+
+## Tech stack
+- node js
+- vue 3
+- AWS S3 Javascripts sdk v3
+
+## Special notes
 Tested with minio docker image: minio/minio:RELEASE.2025-04-22T22-12-26Z.
 
 When using with AWS you need to configure proper CORS config on your S3 bucket else you will get the following browser error:
@@ -55,7 +73,7 @@ When using with AWS you need to configure proper CORS config on your S3 bucket e
 
 You need to add CORS config to allow requests from your domain on the S3 bucket.
 
-# Support
-You can by me a coffee if you like this software
+## Support
+You can buy me a coffee if you like this software
 
 <a href="https://www.buymeacoffee.com/mtseet" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
