@@ -1,0 +1,10 @@
+1.0.2
+- Add proper version handling
+- Fix cookie handling
+- Add changes file
+1.0.1.x
+- Documentation updates
+- Add initial versioning
+- Add missing (.) dot files
+1.0
+- Initial release

@@ -24,7 +24,7 @@ import { useToast } from 'primevue/usetoast';
 <template>
     <Menubar :model="menuBarItems">
       <template #start>
-          <img src="/favicon.ico" style="width:32px;height:32px"><h3 style="display:inline">S3 Object Manager (v1.0.1)</h3>
+          <img src="/favicon.ico" style="width:32px;height:32px"><h3 style="display:inline">S3 Object Manager (v{{appVersion}})</h3>
       </template>
       <template #item="{ item, props, hasSubmenu, root }">
           <a v-ripple class="flex items-center" v-bind="props.action">
@@ -212,9 +212,11 @@ import { XhrHttpHandler } from "@aws-sdk/xhr-http-handler";
 export default {
   props: {
     s3Endpoint: { required: true, type: String },
+    appVersion: { required: true, type: String },
   },
   data() {
     return {
+      appVersion: this.appVersion,
       s3Client: undefined,
       s3Endpoint: this.s3Endpoint,
       objects: [],

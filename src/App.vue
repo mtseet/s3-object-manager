@@ -8,7 +8,7 @@ import Login from './components/Login.vue'
   <Login @loginChanged="loginChanged" :s3Endpoint="s3Endpoint"/>
   </div>
   <div v-if="hasCredentails">
-  <Main  @logout="logout" :s3Endpoint="s3Endpoint"/>  
+  <Main  @logout="logout" :s3Endpoint="s3Endpoint" :appVersion="appVersion"/>  
   </div>
 </template>
 
@@ -21,10 +21,12 @@ import Login from './components/Login.vue'
 export default {
   props: {
       s3Endpoint: { required: true, type: String },
+      appVersion: { required: true, type: String },
   },
   data() {
     return {
       s3Endpoint: this.s3Endpoint,
+      appVersion: this.appVersion,
       hasCredentails: false
     }
   },

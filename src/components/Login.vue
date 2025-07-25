@@ -168,15 +168,14 @@ export default {
                 })
             }else{
 
-                const parsedUrl = new URL(this.s3Endpoint);
-                const domain = parsedUrl.host.split(":")[0];
+                const domain = "localhost";
 
                 window.$cookies.set('access_key', this.accessKey, 
                     '1d',           
                     '/', 
                     domain,
                     true,              
-                    'None'
+                    'Strict'
                 );
 
                 window.$cookies.set('secret_key', this.secretKey,
@@ -184,7 +183,7 @@ export default {
                     '/', 
                     domain,
                     true,              
-                    'None'
+                    'Strict'
                 );
 
                 window.$cookies.set('region', this.selectedRegion.value, 
@@ -192,7 +191,7 @@ export default {
                     '/', 
                     domain,
                     true,              
-                    'None'     
+                    'Strict'     
                 );
 
                 window.$cookies.set('region-name', this.selectedRegion.name, 
@@ -200,7 +199,7 @@ export default {
                     '/', 
                     domain,
                     true,              
-                    'None'     
+                    'Strict'     
                 );    
 
                 this.$emit('loginChanged', true)

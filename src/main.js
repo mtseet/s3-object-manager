@@ -35,7 +35,9 @@ if(s3Endpoint=="")
 else if(!s3Endpoint)
     console.log("S3 Endpoint not defined")
 
-const app = createApp(App,{s3Endpoint:s3Endpoint})
+const appVersion = import.meta.env.VITE_VERSION;
+
+const app = createApp(App,{s3Endpoint:s3Endpoint,appVersion:appVersion})
 app.use(PrimeVue, {
     theme: {
         preset: MyPreset
