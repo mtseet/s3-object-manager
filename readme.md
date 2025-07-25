@@ -47,7 +47,7 @@ npm run build
 cd docker
 ./build-image.sh
 
-docker run -p 5000:80 -d --name s3-manager s3-manager:latest
+docker run -p 5000:80 -d --name s3-object-manager s3-manager:latest
 ```
 
 ## Development

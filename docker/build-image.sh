@@ -5,6 +5,6 @@ rm -rf build
 mkdir build
 cp -a ../dist build
 
-docker build . --tag s3-manager:latest
+docker build . --tag s3-object-manager:latest
 
 rm -rf build
