@@ -38,10 +38,22 @@ npm run build
 Then host the generated contents of dist file with nginx.
 
 ## Run with docker
+The S3 endpoint for this image is AWS
+```
+docker run -p 5000:80 -d --name ghcr.io/mtseet/s3-object-manager:latest
+```
+
+## Build custom docker image
 Add your S3 endpoint to .env.production file
 
 ```
-docker run -p 5000:80 -d --name ghcr.io/mtseet/s3-object-manager:latest
+rm -rf dist
+npm install
+npm run build
+cd docker
+./build-image.sh
+
+docker run -p 5000:80 -d --name s3-object-manager s3-manager:latest
 ```
 
 ## Development
