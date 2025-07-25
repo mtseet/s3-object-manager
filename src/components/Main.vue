@@ -24,7 +24,7 @@ import { useToast } from 'primevue/usetoast';
 <template>
     <Menubar :model="menuBarItems">
       <template #start>
-          <img src="/favicon.ico" style="width:32px;height:32px"><h3 style="display:inline">S3 Object Manager</h3>
+          <img src="/favicon.ico" style="width:32px;height:32px"><h3 style="display:inline">S3 Object Manager (v1.0.1)</h3>
       </template>
       <template #item="{ item, props, hasSubmenu, root }">
           <a v-ripple class="flex items-center" v-bind="props.action">
