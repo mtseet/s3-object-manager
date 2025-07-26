@@ -200,7 +200,7 @@ export default {
                     domain,
                     true,              
                     'Strict'     
-                );    
+                );
 
                 this.$emit('loginChanged', true)
             }

@@ -29,11 +29,13 @@ const MyPreset = definePreset(Aura, {
     }
 });
 
-const s3Endpoint = import.meta.env.VITE_S3_ENDPOINT;
-if(s3Endpoint=="")
-    console.log("Using aws for endpoint!") 
+var s3Endpoint = import.meta.env.VITE_S3_ENDPOINT;
+if(window.config && window.config.s3EndpointUrl)
+    s3Endpoint = window.config.s3EndpointUrl
 else if(!s3Endpoint)
     console.log("S3 Endpoint not defined")
+
+console.log(`s3ApiUrl: ${s3Endpoint}`)
 
 const appVersion = import.meta.env.VITE_VERSION;
 

@@ -28,6 +28,16 @@ install nodejs LTS and do
 `export PATH=/opt/node-v22.17.1-linux-x64/bin:$PATH`
 That is the version I developed on.
 
+## Run with docker
+Customise your endpoint url in config.json then run
+```
+docker run -d -v ./config.js:/usr/share/nginx/html/config.js -p 5000:80 s3-object-manager:latest
+```
+If using AWS endpoints just run
+```
+docker run --d -p 5000:80 s3-object-manager:latest
+```
+
 ## Run with nginx
 Add your S3 endpoint to .env.production file
 
@@ -72,6 +82,8 @@ When using with AWS you need to configure proper CORS config on your S3 bucket e
 `Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://s3.us-east-1.amazonaws.com/?x-id=ListBuckets. (Reason: CORS header ‘Access-Control-Allow-Origin’ missing). Status code: 403.`
 
 You need to add CORS config to allow requests from your domain on the S3 bucket.
+
+Also for minio you might get CORS issues if you are accessing the app from http://domain and your configured S3 endpoint is https or vice versa.
 
 ## Support
 You can buy me a coffee if you like this software
