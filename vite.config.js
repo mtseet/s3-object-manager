@@ -14,5 +14,8 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
+  },
+  preview: {
+    allowedHosts: ["localhost","s3-127-0-0-1.sslip.io"]
   }
 })
