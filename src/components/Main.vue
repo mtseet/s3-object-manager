@@ -672,7 +672,7 @@ export default {
         for(var i=0;i<this.selectedObjects.length;i++)
           console.log(this.selectedObjects[i]) 
     },
-    async generatePresignedUrl(bucketName, objectKey, expiresInSeconds = 60) {
+    async generatePresignedUrl(bucketName, objectKey, expiresInSeconds = 72000) {
       // Create the command to get the object
       const command = new GetObjectCommand({
         Bucket: bucketName,

@@ -1,6 +1,7 @@
 1.0.2.1
 - make s3 endpoint config setable during runtime and add docker image support 
 - add preview ssl config for testing
+- increase preshare url expiry time to 1 day
 1.0.2
 - Add proper version handling
 - Fix cookie handling
