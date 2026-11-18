@@ -84,8 +84,3 @@ When using with AWS you need to configure proper CORS config on your S3 bucket e
 You need to add CORS config to allow requests from your domain on the S3 bucket.
 
 Also for minio you might get CORS issues if you are accessing the app from http://domain and your configured S3 endpoint is https or vice versa.
-
-## Support
-You can buy me a coffee if you like this software
-
-<a href="https://www.buymeacoffee.com/mtseet" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
